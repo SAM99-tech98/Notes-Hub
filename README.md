@@ -12,15 +12,12 @@
             <i class="fas fa-book-open text-3xl text-indigo-600 mr-3"></i>
             <h1 class="text-3xl font-bold text-indigo-600">Notes Hub</h1>
         </div>
-        
-        <h2 class="text-2xl font-semibold mb-4 border-b pb-2 dark:border-gray-700">College Resource Sharing Platform</h2>
-        
+         <h2 class="text-2xl font-semibold mb-4 border-b pb-2 dark:border-gray-700">College Resource Sharing Platform</h2>
         <div class="mb-8">
             <h3 class="text-xl font-medium mb-3 text-indigo-500">📌 Description</h3>
             <p class="mb-4">Notes Hub is a comprehensive platform designed for students to access and share educational resources including lecture notes, study materials, and other academic content.</p>
             <p>The platform features a clean, responsive interface with dark mode support and integrates with Google Drive for file storage and management.</p>
         </div>
-        
         <div class="mb-8">
             <h3 class="text-xl font-medium mb-3 text-indigo-500">✨ Features</h3>
             <ul class="space-y-2">
@@ -51,7 +48,7 @@
             </ul>
         </div>
         
-        <div class="mb-8">
+<div class="mb-8">
             <h3 class="text-xl font-medium mb-3 text-indigo-500">🛠️ Technologies Used</h3>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                 <div class="bg-gray-100 dark:bg-gray-700 p-3 rounded-lg flex items-center">
@@ -81,11 +78,11 @@
             </div>
         </div>
         
-        <div class="mb-8">
+<div class="mb-8">
             <h3 class="text-xl font-medium mb-3 text-indigo-500">🚀 Getting Started</h3>
             <p class="mb-4">To use Notes Hub, simply open the HTML file in any modern web browser. No additional installation is required.</p>
             
-            <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg mb-4">
+ <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg mb-4">
                 <h4 class="font-medium mb-2">For Development:</h4>
                 <ol class="list-decimal pl-5 space-y-1">
                     <li>Clone or download the project files</li>
@@ -95,7 +92,7 @@
             </div>
         </div>
         
-        <div class="mb-8">
+<div class="mb-8">
             <h3 class="text-xl font-medium mb-3 text-indigo-500">📝 Notes</h3>
             <div class="bg-yellow-50 dark:bg-yellow-900 dark:bg-opacity-20 border-l-4 border-yellow-400 p-4">
                 <p>The project currently uses a demo Google Drive API key. For production use, you should:</p>
@@ -106,13 +103,12 @@
                 </ul>
             </div>
         </div>
-        
-        <div class="border-t dark:border-gray-700 pt-6">
+<div class="border-t dark:border-gray-700 pt-6">
             <p class="text-center text-gray-500 dark:text-gray-400">© 2023 Notes Hub Project</p>
         </div>
     </div>
     
-    <script>
+ <script>
         tailwind.config = {
             darkMode: 'class',
         }
