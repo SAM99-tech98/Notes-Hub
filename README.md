@@ -55,4 +55,4 @@ To make it production-ready:
 
 ---
 
-© 2023 Notes Hub Project
+© 2025 Notes Hub Project
