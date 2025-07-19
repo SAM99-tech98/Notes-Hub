@@ -74,6 +74,12 @@
             </div>
             
             <div class="flex items-center space-x-4">
+                <a href="https://github.com/SAM99-tech98/Notes-Hub" target="_blank" title="GitHub Repository" class="hover:text-primary transition text-xl">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://sam99-tech98.github.io/Notes-Hub/" target="_blank" title="Live Site" class="hover:text-primary transition text-xl">
+                    <i class="fas fa-globe"></i>
+                </a>
                 <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
                     <i class="fas fa-moon dark:hidden"></i>
                     <i class="fas fa-sun hidden dark:block"></i>
@@ -99,7 +105,7 @@
         <section id="home" class="mb-16">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-8 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Your College Resource Hub (MCET) </h1>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Your College Resource Hub (MCET)</h1>
                     <p class="text-lg mb-6">Access and share study materials, lecture notes, and educational resources with your peers.</p>
                     <div class="flex space-x-4">
                         <a href="#resources" class="bg-primary hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition">Browse Resources</a>
@@ -268,15 +274,21 @@
                 </div>
                 
                 <div class="flex space-x-6">
+                    <a href="https://github.com/SAM99-tech98/Notes-Hub" target="_blank" title="GitHub Repository" class="hover:text-primary transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://sam99-tech98.github.io/Notes-Hub/" target="_blank" title="Live Site" class="hover:text-primary transition">
+                        <i class="fas fa-globe"></i>
+                    </a>
                     <a href="#" class="hover:text-primary transition"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="hover:text-primary transition"><i class="fab fa-twitter"></i></a>
                     <a href="#" class="hover:text-primary transition"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="hover:text-primary transition"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
-            
+
             <div class="border-t border-gray-200 dark:border-gray-700 mt-6 pt-6 text-center text-sm">
-                <p>&copy; 2025 Notes Hub. All rights reserved.</p>
+                <p>&copy; 2023 Notes Hub. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -395,12 +407,12 @@
                     <div class="flex space-x-2">
                         ${canPreview ? `
                             <button class="file-preview-btn flex-1 bg-gray-100 dark:bg-gray-700 text-sm rounded px-3 py-2"
-                                 data-file-id="${file.id}" data-file-name="${file.name}">
+                                data-file-id="${file.id}" data-file-name="${file.name}">
                                 <i class="fas fa-eye mr-1"></i> View
                             </button>` : ''
                         }
                         <a href="https://drive.google.com/uc?id=${file.id}&export=download" target="_blank"
-                           class="flex-1 bg-primary text-white text-sm rounded px-3 py-2 text-center">
+                            class="flex-1 bg-primary text-white text-sm rounded px-3 py-2 text-center">
                             <i class="fas fa-download mr-1"></i> Download
                         </a>
                     </div>
@@ -414,38 +426,29 @@
             });
         }
 
-// 🔍 File search
-function setupEventListeners() {
-    document.getElementById('search-input')?.addEventListener('input', (e) => {
-        const search = e.target.value.toLowerCase();
-        document.querySelectorAll('.file-card').forEach(card => {
-            const name = card.querySelector('h4').textContent.toLowerCase();
-            card.style.display = name.includes(search) ? 'block' : 'none';
-        });
-    });
+        function setupEventListeners() {
+            // 🔍 File search
+            document.getElementById('search-input')?.addEventListener('input', (e) => {
+                const search = e.target.value.toLowerCase();
+                document.querySelectorAll('.file-card').forEach(card => {
+                    const name = card.querySelector('h4').textContent.toLowerCase();
+                    card.style.display = name.includes(search) ? 'block' : 'none';
+                });
+            });
 
-    document.getElementById('close-preview')?.addEventListener('click', closeFilePreview);
-    document.getElementById('preview-modal')?.addEventListener('click', (e) => {
-        if (e.target === document.getElementById('preview-modal')) closeFilePreview();
-    });
+            // ❌ Close preview modal
+            document.getElementById('close-preview')?.addEventListener('click', closeFilePreview);
+            document.getElementById('preview-modal')?.addEventListener('click', (e) => {
+                if (e.target === document.getElementById('preview-modal')) closeFilePreview();
+            });
 
-    document.getElementById('contact-form')?.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('name')?.value;
-        const email = document.getElementById('email')?.value;
-        const message = document.getElementById('message')?.value;
-        console.log('Contact form submitted:', { name, email, message });
-        alert('Thanks! We will be in touch.');
-        e.target.reset();
-    });
-
-    // 🔄 Refresh Button: Load root folder and reset breadcrumbs
-    document.getElementById('refresh-btn')?.addEventListener('click', (e) => {
-        e.preventDefault();
-        renderFolderTree(ROOT_FOLDER_ID);
-        document.getElementById('breadcrumbs').innerHTML = `<span class="text-gray-500">Root</span>`;
-    });
-}
+            // 🔄 Refresh folder tree
+            document.getElementById('refresh-btn')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                renderFolderTree(ROOT_FOLDER_ID);
+                document.getElementById('breadcrumbs').innerHTML = `<span class="text-gray-500">Root</span>`;
+            });
+        }
 
         // 📺 Preview modal
         function openFilePreview(fileId, fileName) {
