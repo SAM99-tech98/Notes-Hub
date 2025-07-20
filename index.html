@@ -55,6 +55,55 @@
         .dark ::-webkit-scrollbar-thumb {
             background: #64748b;
         }
+        
+        /* Folder tree styling */
+        .folder-tree ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .folder-tree li {
+            margin-bottom: 2px;
+            position: relative;
+        }
+        .folder-tree li:before {
+            content: "";
+            position: absolute;
+            left: -16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            border-left: 2px solid #4F46E5;
+            border-bottom: 2px solid #4F46E5;
+            opacity: 0.5;
+        }
+        .folder-link {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.2s;
+            color: inherit;
+            text-decoration: none;
+        }
+        .folder-link:hover {
+            background-color: rgba(79, 70, 229, 0.1);
+            color: #4F46E5;
+        }
+        .folder-link:before {
+            content: "\f07b";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 8px;
+            color: #4F46E5;
+            font-size: 0.9em;
+        }
+        .folder-link:hover:before {
+            color: #4F46E5;
+        }
+        .dark .folder-link:hover {
+            background-color: rgba(79, 70, 229, 0.2);
+        }
     </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-200">
@@ -362,7 +411,7 @@
                 // Folders
                 folderTree.innerHTML = folders.length
                     ? '<ul>' + folders.map(f => 
-                        `<li><a href="#" data-folder-id="${f.id}" class="folder-link">${f.name}</a></li>`).join('') + '</ul>'
+                         `<li><a href="#" data-folder-id="${f.id}" class="folder-link">${f.name}</a></li>`).join('') + '</ul>'
                     : '<p>No folders</p>';
 
                 // Files
